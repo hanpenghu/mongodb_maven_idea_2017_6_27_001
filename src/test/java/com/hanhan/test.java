@@ -1,6 +1,7 @@
 package com.hanhan;
 
 import com.mongodb.MongoClient;
+import com.mongodb.MongoClientOptions;
 import com.mongodb.MongoCredential;
 import com.mongodb.ServerAddress;
 import com.mongodb.client.FindIterable;
@@ -82,8 +83,15 @@ public class test {
             List<MongoCredential> credentials = new ArrayList<MongoCredential>();
             credentials.add(credential);
 
-            //通过连接认证获取MongoDB连接
+
+            MongoClientOptions.Builder mcob=MongoClientOptions.builder();
+            MongoClientOptions mco = mcob.build();
+
+
+            //通过连接认证获取MongoDB连接//默认使用了连接池,最大连接数100,并且是final的,我看了源码了
             MongoClient mongoClient = new MongoClient(addrs,credentials);
+
+
 
             //连接到数据库
             MongoDatabase mongoDatabase = mongoClient.getDatabase("lianxi3");
@@ -103,6 +111,8 @@ public class test {
             while(mongoCursor.hasNext()){
                 System.out.println(mongoCursor.next());
             }
+
+            mongoClient.close();
 
         }catch(Exception e){
             System.err.println( e.getClass().getName() + ": " + e.getMessage() );
