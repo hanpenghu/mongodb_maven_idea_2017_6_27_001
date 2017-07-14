@@ -8,7 +8,7 @@
     <artifactId>mongodb_maven_idea_2017_6_27_001</artifactId>
     <version>1.0-SNAPSHOT</version>
     <dependencies>
-    <!-- https://mvnrepository.com/artifact/org.mongodb/mongo-java-driver -->
+    <!-- https://mvnrepository.com/artifact/org.mongodb/mongo-java-driver  -->
     <dependency>
         <groupId>org.mongodb</groupId>
         <artifactId>mongo-java-driver</artifactId>

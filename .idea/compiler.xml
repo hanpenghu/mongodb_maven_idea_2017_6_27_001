@@ -10,7 +10,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="mongodb_maven_idea_2017_6_27_001" target="1.5" />
+      <module name="mongodb_maven_idea_2017_6_27_001" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
